@@ -1,34 +1,45 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import * as z from "zod"
+import Image from "next/image"
+import contact from "@/public/images/contact.png"
 import { Mail, Phone } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import contact from "@/public/images/contact.png"
-import Image from "next/image"
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  phone: z.string().min(10, {
+    message: "Please enter a valid phone number.",
+  }),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }),
+})
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log(formData)
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values)
   }
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="bg-[#00B5E2] text-white py-6">
+    <div>
+      <div className="bg-[#00A3C4] text-white py-6">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <div className="flex justify-center gap-8">
@@ -44,73 +55,74 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto py-12">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Contact Form */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="bg-white rounded-3xl shadow-lg p-8">
+            <p className="text-black text-2xl font-bold mb-6">
               Fill out the form below, and we'll get back to you as soon as possible!
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-lg font-semibold mb-2">
-                  Your Name <span className="text-[#F20707]">*</span>
-                </label>
-                <Input
-                  id="name"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                />
+            </p>
+
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[#191919] font-bold text-lg mb-1">
+                    Your Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    {...form.register("name")}
+                    className="w-full px-3 py-2 border rounded-md"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[#191919] font-bold text-lg mb-1">
+                    Your Phone number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    {...form.register("phone")}
+                    className="w-full px-3 py-2 border rounded-md"
+                    placeholder="Enter your phone"
+                  />
+                </div>
               </div>
+
               <div>
-                <label htmlFor="phone" className="block text-lg font-semibold mb-2">
-                  Your Phone number <span className="text-[#F20707]">*</span>
+                <label className="block text-[#191919] font-bold text-lg mb-1">
+                  Your Email <span className="text-red-500">*</span>
                 </label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-lg font-semibold mb-2">
-                  Your Email <span className="text-[#F20707]">*</span>
-                </label>
-                <Input
-                  id="email"
+                <input
+                  {...form.register("email")}
                   type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-3 py-2 border rounded-md"
+                  placeholder="Enter your email"
                 />
               </div>
+
               <div>
-                <label htmlFor="message" className="block text-lg font-semibold mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  rows={6}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                <label className="block text-[#191919] font-bold text-lg mb-1">Message</label>
+                <textarea
+                  {...form.register("message")}
+                  className="w-full px-3 py-2 border rounded-md min-h-[120px]"
+                  placeholder="Anything you would like us to know"
                 />
               </div>
-              <Button type="submit" className="w-full h-[45px] rounded-none text-xl font-bold text-white bg-[#00A3C4] hover:bg-[#0099CC]">
+
+              <button
+                type="submit"
+                className="w-full bg-[#00A3C4] hover:bg-[#008CAD] text-white py-3 transition-colors"
+              >
                 Submit
-              </Button>
+              </button>
             </form>
           </div>
 
-          {/* Image */}
-          <div className="rounded-lg px-[3%] overflow-hidden shadow-lg">
+          <div className="relative h-[550px] rounded-3xl overflow-hidden">
             <Image
               src={contact}
-              alt="Modern pool with wooden deck"
-              className="w-full h-full object-cover"
+              alt="Modern pool design"
+              fill
+              className="object-cover"
+              priority
             />
           </div>
         </div>

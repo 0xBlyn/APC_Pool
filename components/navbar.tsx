@@ -51,9 +51,9 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Button size="sm" className="bg-[#00B5E2] hover:bg-[#0099CC]">
-              Get Quote
-            </Button>
+            <Link href="/quote">
+            <Button size="sm" className="w-full text-white px-5 rounded-[2px] bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
+            </Link>
           </div>
 
           {/* Mobile Navigation */}
@@ -74,13 +74,13 @@ export function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-base font-medium text-gray-700 transition-colors hover:text-blue-600"
+                      className="text-2xl font-medium  text-black  transition-colors hover:text-blue-600"
                     >
                       {item.name}
                     </Link>
                   ))}
                   <Link href="/quote">
-                    <Button className="mt-2 w-full bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
+                    <Button className="mt-2 w-full text-white text-2xl rounded-[2px] bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
                   </Link>
                 </div>
               </SheetContent>

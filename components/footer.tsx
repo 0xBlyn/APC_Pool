@@ -14,10 +14,10 @@ const quickLinks = [
 
 const services = [
   { name: "Custom Pool Design", href: "/services/design" },
-  { name: "Pool Construction & Installation", href: "/services/construction" },
-  { name: "Pool Renovation & Remodeling", href: "/services/renovation" },
-  { name: "Pool Maintenance & Repairs", href: "/services/maintenance" },
-  { name: "Water Features & Landscaping", href: "/services/landscaping" },
+  { name: "Pool Construction & Installation", href: "/services" },
+  { name: "Pool Renovation & Remodeling", href: "/services" },
+  { name: "Pool Maintenance & Repairs", href: "/services" },
+  { name: "Water Features & Landscaping", href: "/services" },
 ]
 
 const socialLinks = [
@@ -33,9 +33,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h2 className="text-2xl font-bold">APC Pool</h2>
-            <p className="text-sm text-gray-300">
+            <p className="text-lg text-gray-300">
               Transforming outdoor spaces with innovative pool designs and expert craftsmanship.
             </p>
             <div className="flex space-x-4">
