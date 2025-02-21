@@ -69,7 +69,7 @@ export default function ServicesPage() {
               <section id="features-landscaping">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Water Features & Landscaping</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Enhance your pool's beauty with waterfalls, fountains, LED lighting, and landscaping. We create the
+                  Enhance your pool&apos;s beauty with waterfalls, fountains, LED lighting, and landscaping. We create the
                   perfect ambiance for relaxation and entertainment.
                 </p>
               </section>

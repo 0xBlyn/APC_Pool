@@ -59,7 +59,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="bg-white rounded-3xl shadow-lg p-8">
             <p className="text-black text-2xl font-bold mb-6">
-              Fill out the form below, and we'll get back to you as soon as possible!
+              Fill out the form below, and we&apos;ll get back to you as soon as possible!
             </p>
 
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

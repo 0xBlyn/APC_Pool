@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { ChevronDown, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
 import Image from "next/image"
 import quote from "@/public/images/quote.png"
 

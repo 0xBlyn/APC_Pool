@@ -111,7 +111,7 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-[#1f1f1f]">Ready to Create Your Dream Pool?</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-            Let's bring your vision to life with our expert design and construction team.
+            Let&apos;s bring your vision to life with our expert design and construction team.
           </p>
           <button className="mt-8 bg-[#00A3C4] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#008CAD] transition-colors">
             Start Your Project

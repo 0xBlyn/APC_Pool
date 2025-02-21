@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-extrabold text-[#191919] text-2xl">Fast Response</h3>
-                  <p className="text-[#191919] font-medium text-xl md:text-2xl">We'll get back to you within 24 hours</p>
+                  <p className="text-[#191919] font-medium text-xl md:text-2xl">We&apos;ll get back to you within 24 hours</p>
                 </div>
               </div>
             </div>
