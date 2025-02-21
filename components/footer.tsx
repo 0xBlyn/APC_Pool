@@ -3,6 +3,8 @@ import { Facebook, Instagram, Linkedin, Send, PhoneIcon as WhatsApp } from "luci
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image"
+import logo from "@/public/images/logo.png"
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -34,7 +36,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold">APC Pool</h2>
+            <Image src={logo} width={500} height={500} alt="APC Pool logo" />
             <p className="text-lg text-gray-300">
               Transforming outdoor spaces with innovative pool designs and expert craftsmanship.
             </p>
