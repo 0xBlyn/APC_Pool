@@ -1,7 +1,24 @@
+import { Mail, Phone } from "lucide-react";
+
 export default function ServicesPage() {
     return (
-      <div className="px-[5%]">
-        <div className="container mx-auto py-6">
+      <div>
+        <div className="bg-[#00A3C4] text-white py-6">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <div className="flex justify-center gap-8">
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4" />
+              <a href="mailto:contact@poolside.com">contact@poolside.com</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="h-4 w-4" />
+              <a href="tel:+234809797087">+234 809 7978 087</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div className="container mx-auto py-6 px-[5%]">
           <div className="grid md:grid-cols-[250px,1fr] gap-8">
             {/* Sidebar Navigation */}
             <nav className="space-y-4 hidden md:flex md:flex-col  border-[#1f1f1f] border-r-2">
@@ -30,7 +47,6 @@ export default function ServicesPage() {
   
             {/* Content */}
             <div className="space-y-5">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Services</h1>
   
               <section id="custom-pool-design">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Custom Pool Design</h2>

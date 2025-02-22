@@ -6,6 +6,8 @@ import { Menu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
+import logo from "@/public/images/logoblack.png"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -36,7 +38,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold tracking-tighter">
-              APC Pool
+              <Image src={logo} width={120} height={500} alt="APC Pool logo" />
             </Link>
           </div>
 
@@ -46,13 +48,13 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 focus-visible:text-blue-600"
+                className="text-base font-medium text-gray-700 transition-colors hover:text-blue-600 focus-visible:text-blue-600"
               >
                 {item.name}
               </Link>
             ))}
             <Link href="/quote">
-            <Button size="sm" className="w-full text-white px-5 rounded-[2px] bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
+            <Button size="sm" className="w-full text-base h-[40px] text-white px-5 rounded-[2px] bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
             </Link>
           </div>
 
@@ -67,20 +69,20 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent side="right">
                 <SheetHeader>
-                  <SheetTitle>APC Pool</SheetTitle>
+                  <SheetTitle><Image src={logo} width={120} height={500} alt="APC Pool logo" /></SheetTitle>
                 </SheetHeader>
                 <div className="mt-6 flex flex-col space-y-4">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-2xl font-medium  text-black  transition-colors hover:text-blue-600"
+                      className="text-xl font-medium  text-black  transition-colors hover:text-blue-600"
                     >
                       {item.name}
                     </Link>
                   ))}
                   <Link href="/quote">
-                    <Button className="mt-2 w-full text-white text-2xl rounded-[2px] bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
+                    <Button className="mt-2 w-full h-[45px] text-white text-xl rounded-[2px] bg-[#00B5E2] hover:bg-[#0099CC]">Get Quote</Button>
                   </Link>
                 </div>
               </SheetContent>

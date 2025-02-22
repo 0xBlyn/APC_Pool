@@ -26,7 +26,7 @@ export default function Home() {
 
         {/* Text Content */}
         <motion.div
-          className="relative z-10 text-white p-12 md:py-[15%] py-[5%] max-w-[600px]"
+          className="relative z-10 text-white p-12 md:py-[15%] pt-[30%] max-w-[600px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -43,7 +43,7 @@ export default function Home() {
       <section className="container pb-10 px-[5%]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl text-[#191919] font-bold leading-tight">
+            <h1 className="text-3xl md:text-4xl text-[#191919] font-bold leading-tight">
               Redefining Pool Construction with Cutting-Edge Innovation and Superior Craftsmanship
             </h1>
             <p className="text-[#6B6B6B] text-xl md:text-2xl font-medium">
@@ -99,7 +99,7 @@ export default function Home() {
       <section className="bg-white py-16">
         <div className="container mx-auto px-[5%]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="bg-[#E6FBFF] pb-8 rounded-[15px] overflow-hidden shadow-lg transition-transform hover:scale-105">
+            <div className="bg-[#E6FBFF] pb-[50px] rounded-[15px] overflow-hidden shadow-lg transition-transform hover:scale-105">
               <Image
                 src={img1 || "/placeholder.svg"}
                 alt="Custom Pool Design"
@@ -113,7 +113,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-[#E6FBFF] rounded-[15px] overflow-hidden shadow-lg transition-transform hover:scale-105">
+            <div className="bg-[#E6FBFF] pb-[50px] rounded-[15px] overflow-hidden shadow-lg transition-transform hover:scale-105">
               <Image
                 src={img2 || "/placeholder.svg"}
                 alt="Pool Installation"
@@ -127,7 +127,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-[#E6FBFF]  rounded-[15px] overflow-hidden shadow-lg transition-transform hover:scale-105">
+            <div className="bg-[#E6FBFF] pb-[50px] rounded-[15px] overflow-hidden shadow-lg transition-transform hover:scale-105">
               <Image
                 src={img3 || "/placeholder.svg"}
                 alt="Pool Renovation"
@@ -141,7 +141,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-[#E6FBFF] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+            <div className="bg-[#E6FBFF] pb-[50px] rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
               <Image
                 src={img4 || "/placeholder.svg"}
                 alt="Pool Maintenance & Repairs"

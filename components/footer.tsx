@@ -36,8 +36,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-2">
-            <Image src={logo} width={500} height={500} alt="APC Pool logo" />
-            <p className="text-lg text-gray-300">
+            <Image src={logo} width={120} height={500} alt="APC Pool logo" />
+            <p className="text-base text-gray-400">
               Transforming outdoor spaces with innovative pool designs and expert craftsmanship.
             </p>
             <div className="flex space-x-4">
@@ -53,7 +53,7 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2 space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-gray-400 transition-colors hover:text-white hover:underline">
@@ -67,7 +67,7 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold">Services</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2 space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
                   <Link
